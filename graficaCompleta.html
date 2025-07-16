@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gráfica completa</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    canvas {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="graficoCompleto"></canvas>
+  <script>
+    const ctx = document.getElementById("graficoCompleto").getContext("2d");
+    const datos = JSON.parse(localStorage.getItem("datosGrafica")) || [];
+
+    const labels = datos.map(d => new Date(d.fecha).toLocaleDateString());
+    const valores = datos.map(d => d.valor);
+
+    new Chart(ctx, {
+      type: "line",
+      data: {
+        labels,
+        datasets: [{
+          label: "Velocidad del viento (m/s)",
+          data: valores,
+          fill: false,
+          borderColor: "#3e95cd",
+          tension: 0.1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            title: { display: true, text: "Fecha" }
+          },
+          y: {
+            title: { display: true, text: "m/s" },
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

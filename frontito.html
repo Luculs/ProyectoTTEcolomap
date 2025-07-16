@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mapa - Estación más cercana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="estilitos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Menú de hamburguesa -->
+  <div id="menu-icon">&#9776;</div>
+  <div id="menu-options" class="hidden">
+    <a href="informacionAd.html" target="_blank">About us</a>
+    <a href="informacionAd.html" target="_blank">Información</a>
+  </div>
+
+  <div id="panel">
+    <div>
+      <h2>Velocidad del viento</h2>
+
+      <div id="filtros" class="horizontal-filtros">
+        <label><input type="radio" name="tipo" value="año" checked> Año</label>
+        <label><input type="radio" name="tipo" value="mes"> Mes</label>
+        <label><input type="radio" name="tipo" value="día"> Día</label>
+      </div>
+
+      <div id="info">Selecciona un punto en el mapa...</div>
+
+      <button id="btnGraficar">Ver gráfica completa</button>
+
+
+      <div id="prediccion">
+        <h3>Predicción de ganancia</h3>
+        <p><strong>Velocidad promedio:</strong> <span id="velocidadProm">--</span> m/s</p>
+        <p><strong>Tipo de turbina:</strong> <span id="tipoTurbina">Vestas V52</span></p>
+        <p><strong>Producción estimada:</strong> <span id="produccion">--</span> kWh/año</p>
+        <p><strong>Ganancia estimada:</strong> <span id="ganancia">--</span> USD/año</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="mapa"></div>
+
+  <!-- Logo en esquina inferior derecha -->
+  <img src="logo.png" id="logo" alt="Logo" />
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script type="module">
+    import { inicializarMapa } from './mapita.js';
+    import { obtenerEstacionMasCercana } from './funcioncitas.js';
+
+    window.addEventListener("DOMContentLoaded", () => {
+      inicializarMapa(obtenerEstacionMasCercana);
+    });
+
+    // Menú desplegable
+    const menuIcon = document.getElementById("menu-icon");
+    const menuOptions = document.getElementById("menu-options");
+
+    menuIcon.addEventListener("click", () => {
+      menuOptions.classList.toggle("hidden");
+    });
+  </script>
+</body>
+</html>

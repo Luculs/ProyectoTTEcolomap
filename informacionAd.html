@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Información del Proyecto</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Información del Proyecto</h1>
+  </header>
+
+  <main>
+    <h2>¿Qué hace esta aplicación?</h2>
+    <p>
+      Esta aplicación permite seleccionar cualquier punto del mapa de Colombia para encontrar
+      la estación meteorológica más cercana que mida velocidad del viento. Al seleccionarla,
+      se muestran sus datos y se genera un gráfico con las observaciones históricas
+      (filtradas por año, mes o día).
+    </p>
+
+    <h2>¿De dónde vienen los datos?</h2>
+    <p>
+      Los datos son obtenidos en tiempo real desde el portal oficial de datos abiertos de Colombia:
+      <a href="https://www.datos.gov.co" target="_blank">datos.gov.co</a>, específicamente del recurso
+      <strong><code>sgfv-3yp8</code></strong>, que contiene información meteorológica
+      de múltiples estaciones.
+    </p>
+
+    <h2>¿Qué opciones tiene el usuario?</h2>
+    <ul>
+      <li>Ver la estación más cercana al hacer clic en el mapa.</li>
+      <li>Visualizar información detallada de esa estación.</li>
+      <li>Filtrar los datos históricos por:
+        <strong>año, mes o día</strong>.
+      </li>
+      <li>Ver un gráfico representativo en la parte izquierda inferior.</li>
+    </ul>
+
+    <h2>Tecnologías utilizadas</h2>
+    <ul>
+      <li>📍 <strong>Leaflet.js</strong> para el mapa interactivo</li>
+      <li>📊 <strong>Chart.js</strong> para los gráficos</li>
+      <li>💻 HTML, CSS y JavaScript en módulos</li>
+      <li>🔗 Integración con <strong>datos.gov.co</strong></li>
+    </ul>
+  </main>
+
+  <footer>
+    &copy; 2025 Proyecto de visualización de datos climáticos. Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>

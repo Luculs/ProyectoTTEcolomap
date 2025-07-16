@@ -1,0 +1,263 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#panel {
+  width: 320px;
+  background: #f2f2f2;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 2px solid #ccc;
+}
+
+#panel h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#filtros {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+#filtros label {
+  display: inline-block;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+#info {
+  background: white;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  overflow-y: auto;
+  max-height: 200px;
+  margin-bottom: 1rem;
+}
+
+#mapa {
+  flex: 1;
+}
+
+canvas {
+  width: 100%;
+  height: 100px;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+/* Sección de predicción */
+#prediccion {
+  background: #fff;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+/* Menú de tres rayitas */
+#menu-icon {
+  position: fixed;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Opciones del menú */
+#menu-options {
+  position: fixed;
+  top: 45px;
+  right: 15px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 1000;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+#menu-options a {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid #eee;
+}
+
+#menu-options a:hover {
+  background-color: #f0f0f0;
+}
+
+#menu-options.hidden {
+  display: none;
+}
+
+/* Logo en esquina inferior derecha */
+#logo {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 60px;
+  height: auto;
+  z-index: 500;
+}
+canvas {
+  width: 100%;
+  height: 100px; /* 👈 este valor fijo puede estirarse demasiado según contenido */
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-top: 1rem;
+}
+
+/* Mejoras visuales generales */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+/* Panel lateral */
+#panel {
+  width: 320px;
+  background: #ffffff;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 2px solid #ccc;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Título principal */
+#panel h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+/* Filtros */
+#filtros label {
+  display: inline-block;
+  margin-right: 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* Información de estación */
+#info {
+  background: #fefefe;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+/* Botón de ver gráfica */
+#btnGraficar {
+  padding: 0.5rem 1rem;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+#btnGraficar:hover {
+  background-color: #125ca1;
+}
+
+/* Sección de predicción */
+#prediccion {
+  background: #fefefe;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+#prediccion h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: #444;
+}
+
+/* Logo */
+#logo {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 60px;
+  height: auto;
+  z-index: 500;
+}
+
+/* Menú */
+#menu-icon {
+  position: fixed;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#menu-options {
+  position: fixed;
+  top: 45px;
+  right: 15px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 1000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+#menu-options a {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid #eee;
+}
+
+#menu-options a:hover {
+  background-color: #f0f0f0;
+}
+
+#menu-options.hidden {
+  display: none;
+}
